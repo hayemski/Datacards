@@ -1,0 +1,35 @@
+<div class="text-center o-name">
+  <h1 class="p-3">{{ card.name === "" ? "Operative Name" : card.name }}</h1>
+</div>
+<div #row1 style="font-size: 1.8em" class="f-s-b">
+  <span class="text-center w-100 o-stats">
+    <div>M</div>
+    <div>{{ card.movement }}</div>
+  </span>
+  <span class="text-center w-100 o-stats">
+    <div>APL</div>
+    <div>{{ card.APL }}</div>
+  </span>
+  <span class="text-center w-100 o-stats">
+    <div style="">GA</div>
+    <div>
+      {{ card.GA }}
+    </div>
+  </span>
+  <span class="text-center w-100 o-stats">
+    <div>DF</div>
+    <div>
+      {{ card.DF }}
+    </div>
+  </span>
+  <span class="text-center w-100 o-stats">
+    <div>SV</div>
+    <div>{{ card.save }}+</div>
+  </span>
+  <span class="text-center w-100 o-stats">
+    <div>W</div>
+    <div>
+      {{ card.wounds }}
+    </div>
+  </span>
+</div>

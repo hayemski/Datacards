@@ -9,6 +9,7 @@ import { CardsComponent } from './components/cards/cards.component';
 import { CardComponent } from './components/cards/card/card.component';
 import { MaterialModule } from './material/material/material.module';
 import { FormsModule } from '@angular/forms'; // Import FormsModule
+import { MainStatsComponent } from './components/cards/card/main-stats/main-stats.component';
 
 
 
@@ -17,7 +18,8 @@ import { FormsModule } from '@angular/forms'; // Import FormsModule
   declarations: [
     AppComponent,
     CardsComponent,
-    CardComponent
+    CardComponent,
+    MainStatsComponent
   ],
   imports: [
     BrowserModule,
