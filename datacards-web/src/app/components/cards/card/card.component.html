@@ -1,0 +1,81 @@
+<div class="wrapper">
+  <div>
+    <mat-card style="height: 600px; width: 400px">
+      <div>
+        <span
+          ><h1>{{ card.name === "" ? "Operative name" : card.name }}</h1></span
+        >
+      </div>
+      <div #row1 style="font-size: 1.5em" class="stats">
+        <span class="text-center">
+          <div>M</div>
+          <div></div>
+          {{ card.movement }}
+        </span>
+        <span class="text-center">
+          <div>APL</div>
+          <div></div>
+          {{ card.APL }}
+        </span>
+        <span class="text-center">
+          <div>GA</div>
+          <div></div>
+          {{ card.GA }}
+        </span>
+      </div>
+      <div #row2 style="font-size: 1.5em; margin-top: 1em" class="stats">
+        <span class="text-center">
+          <div>DF</div>
+          <div></div>
+          {{ card.DF }}
+        </span>
+        <span class="text-center">
+          <div>SV</div>
+          <div></div>
+          {{ card.save }}+
+        </span>
+        <span class="text-center">
+          <div>W</div>
+          <div></div>
+          {{ card.wounds }}
+        </span>
+      </div>
+    </mat-card>
+  </div>
+
+  <div>
+    <mat-card style="height: 600px; width: 400px; margin-left: 1em">
+      <div>
+        <mat-form-field>
+          <mat-label>Name</mat-label>
+          <input matInput placeholder="Name" [(ngModel)]="card.name" />
+        </mat-form-field>
+      </div>
+
+      <mat-form-field>
+        <mat-label>Movement</mat-label>
+        <input matInput placeholder="M" [(ngModel)]="card.movement" />
+      </mat-form-field>
+      <mat-form-field>
+        <mat-label>APL</mat-label>
+        <input matInput placeholder="APL" [(ngModel)]="card.APL" />
+      </mat-form-field>
+      <mat-form-field>
+        <mat-label>GA</mat-label>
+        <input matInput placeholder="Group activation" [(ngModel)]="card.GA" />
+      </mat-form-field>
+      <mat-form-field>
+        <mat-label>Defence</mat-label>
+        <input matInput placeholder="Defence" [(ngModel)]="card.DF" />
+      </mat-form-field>
+      <mat-form-field>
+        <mat-label>Save</mat-label>
+        <input matInput placeholder="Save" [(ngModel)]="card.save" />
+      </mat-form-field>
+      <mat-form-field>
+        <mat-label>Wounds</mat-label>
+        <input matInput placeholder="Wounds" [(ngModel)]="card.wounds" />
+      </mat-form-field>
+    </mat-card>
+  </div>
+</div>
