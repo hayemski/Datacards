@@ -1,0 +1,18 @@
+<div class="">
+  <h2>Add an operative</h2>
+</div>
+
+<div class="f-sa">
+  <mat-form-field class="col-6" [formGroup]="weaponForm">
+    <mat-label>Operative</mat-label>
+    <mat-select formControlName="wType">
+      <mat-option *ngFor="let operative of imp" [value]="operative">
+        {{ operative.opname }}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+
+</div>
+
+
+

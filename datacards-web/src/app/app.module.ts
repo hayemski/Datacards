@@ -10,6 +10,10 @@ import { CardComponent } from './components/cards/card/card.component';
 import { MaterialModule } from './material/material/material.module';
 import { FormsModule } from '@angular/forms'; // Import FormsModule
 import { MainStatsComponent } from './components/cards/card/main-stats/main-stats.component';
+import { WeaponFormComponent } from './components/cards/card/forms/weapon-form/weapon-form.component';
+import { MainStatsFormComponent } from './components/cards/card/forms/main-stats-form/main-stats-form.component';
+import { ReactiveFormsModule } from '@angular/forms';
+import { OperativeSelectionComponent } from './components/cards/operative/operative-selection/operative-selection.component';
 
 
 
@@ -19,7 +23,10 @@ import { MainStatsComponent } from './components/cards/card/main-stats/main-stat
     AppComponent,
     CardsComponent,
     CardComponent,
-    MainStatsComponent
+    MainStatsComponent,
+    WeaponFormComponent,
+    MainStatsFormComponent,
+    OperativeSelectionComponent
   ],
   imports: [
     BrowserModule,
@@ -27,7 +34,8 @@ import { MainStatsComponent } from './components/cards/card/main-stats/main-stat
     BrowserAnimationsModule,
     RouterModule,
     MaterialModule,
-    FormsModule
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
