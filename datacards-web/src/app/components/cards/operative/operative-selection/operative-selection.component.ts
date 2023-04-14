@@ -17,6 +17,7 @@ export class OperativeSelectionComponent implements OnInit {
 
   factions!:any;
   operatives!:any;
+  ploys!:any;
   //killteams[7].fireteams[0].operatives;
 
   ngOnInit(): void {
@@ -43,13 +44,20 @@ export class OperativeSelectionComponent implements OnInit {
       console.log(value)
       //this.factions = value.fireteams[0]?.operatives;
       this.operatives = value.fireteams[0]?.operatives;
+      this.ploys = value.ploys.strat.concat(value.ploys.tac);
     })
+    this.weaponForm.get('wPloy')?.valueChanges.subscribe(value => {
+      this.card.ploy = value;
+      console.log(this.card)
+    })
+
   }
 
   weaponForm = new FormGroup({
     wFaction: new FormControl(),
     wKillTeam: new FormControl(),
     wOperative: new FormControl(),
+    wPloy: new FormControl()
   });
 
 

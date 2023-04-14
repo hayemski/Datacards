@@ -16,6 +16,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { OperativeSelectionComponent } from './components/cards/operative/operative-selection/operative-selection.component';
 import { SymbolReplace } from './pipes/symbolReplace';
 import { AbilitiesNotesComponent } from './components/cards/card/abilities-notes/abilities-notes.component';
+import { PloyCardComponent } from './components/cards/card/ploy-card/ploy-card.component';
 
 
 
@@ -30,7 +31,8 @@ import { AbilitiesNotesComponent } from './components/cards/card/abilities-notes
     MainStatsFormComponent,
     OperativeSelectionComponent,
     SymbolReplace,
-    AbilitiesNotesComponent
+    AbilitiesNotesComponent,
+    PloyCardComponent
   ],
   imports: [
     BrowserModule,

@@ -8,7 +8,7 @@ export class SymbolReplace implements PipeTransform {
 
   constructor(private sanitizer: DomSanitizer) {}
 
-  transform(value: string): SafeHtml {
+  transform(value: string | undefined): SafeHtml {
     if (!value) {
       return '';
     }
