@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
 import { allData } from 'src/assets/data';
 import { Card } from '../../card/card';
@@ -11,7 +11,9 @@ import { Card } from '../../card/card';
 export class OperativeSelectionComponent implements OnInit {
   @Input() card!: Card;
   @Input() type!: string;
-  @Input() ploys!:any;
+  @Input() ploys:any;
+  @Output() ployEmitter = new EventEmitter<string>();
+
 
   constructor() { }
   allData: any = allData;
@@ -38,19 +40,15 @@ export class OperativeSelectionComponent implements OnInit {
     })
 
     this.weaponForm.get('wFaction')?.valueChanges.subscribe(value => {
-      console.log(value)
       this.factions = value.killteams;
     })
     this.weaponForm.get('wKillTeam')?.valueChanges.subscribe(value => {
-      console.log(value)
-      //this.factions = value.fireteams[0]?.operatives;
       this.operatives = value.fireteams[0]?.operatives;
-      debugger;
       this.ploys = value.ploys.strat.concat(value.ploys.tac);
+      this.ployEmitter.emit(this.ploys);
     })
     this.weaponForm.get('wPloy')?.valueChanges.subscribe(value => {
       this.card.ploy = value;
-      console.log(this.card)
     })
 
   }
@@ -61,7 +59,4 @@ export class OperativeSelectionComponent implements OnInit {
     wOperative: new FormControl(),
     wPloy: new FormControl()
   });
-
-
-
 }

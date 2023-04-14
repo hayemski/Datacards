@@ -11,7 +11,7 @@
     <mat-card style="height: 600px; width: 450px">
       <!-- <app-main-stats-form [card]="card"></app-main-stats-form>
       <app-weapon-form [card]="card"></app-weapon-form> -->
-      <app-operative-selection [card]="card" [ploys]="ploys"></app-operative-selection>
+      <app-operative-selection [card]="card" [ploys]="ploys"  (ployEmitter)="changePloy($event)"></app-operative-selection>
     </mat-card>
 
   </div>
@@ -27,7 +27,7 @@
   <mat-card style="height: 600px; width: 450px">
     <!-- <app-main-stats-form [card]="card"></app-main-stats-form>
     <app-weapon-form [card]="card"></app-weapon-form> -->
-    <app-ploy-selection [card]="card" [ploys]="ploys"></app-ploy-selection>
+    <app-ploy-selection [card]="card" [ploys]="ploys"  (ployEmitter)="changePloySelect($event)"></app-ploy-selection>
   </mat-card>
 
 </div>

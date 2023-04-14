@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
 import { Card } from '../../card/card';
 
@@ -10,14 +10,25 @@ import { Card } from '../../card/card';
 export class PloySelectionComponent implements OnInit {
   @Input() card!: Card;
   @Input() ploys!:any;
+  @Output() ployEmitter = new EventEmitter<string>();
+
 
   constructor() { }
 
   ngOnInit() {
+
+
+  this.weaponForm.get('wPloy')?.valueChanges.subscribe(value => {
+    this.card.ploy = value;
+    this.ployEmitter.emit(value);
+  })
+
   }
 
   weaponForm = new FormGroup({
     wPloy: new FormControl()
   });
+
+
 
 }

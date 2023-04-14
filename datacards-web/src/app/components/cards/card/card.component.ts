@@ -21,7 +21,25 @@ export class CardComponent implements OnInit {
     uniqueActions: undefined
   };
 
-  ploys!: Ploy[];
+  ploys: Ploy[] = [
+    {
+      factionid:   '',
+      killteamid:  '',
+      ployid:      '',
+      ployname:    '',
+      ploytype:    '',
+      CP:          '',
+      description: '',
+    }
+  ];
+
+  changePloy(event:any){
+    this.ploys = event as Ploy[];
+  }
+
+  changePloySelect(event:any){
+    this.card.ploy = event;
+  }
 
   constructor() {
   }
