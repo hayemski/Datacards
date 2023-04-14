@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Card } from './card';
+import { Card, Ploy } from './card';
 
 
 @Component({
@@ -20,6 +20,9 @@ export class CardComponent implements OnInit {
     abilities : undefined,
     uniqueActions: undefined
   };
+
+  ploys!: Ploy[];
+
   constructor() {
   }
 
