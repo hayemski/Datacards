@@ -15,7 +15,10 @@ export class CardComponent implements OnInit {
     GA: 0,
     DF: 0,
     save: 0,
-    wounds: 0
+    wounds: 0,
+    weapons: undefined,
+    abilities : undefined,
+    uniqueActions: undefined
   };
   constructor() {
   }

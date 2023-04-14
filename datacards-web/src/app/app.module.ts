@@ -14,6 +14,8 @@ import { WeaponFormComponent } from './components/cards/card/forms/weapon-form/w
 import { MainStatsFormComponent } from './components/cards/card/forms/main-stats-form/main-stats-form.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { OperativeSelectionComponent } from './components/cards/operative/operative-selection/operative-selection.component';
+import { SymbolReplace } from './pipes/symbolReplace';
+import { AbilitiesNotesComponent } from './components/cards/card/abilities-notes/abilities-notes.component';
 
 
 
@@ -26,7 +28,9 @@ import { OperativeSelectionComponent } from './components/cards/operative/operat
     MainStatsComponent,
     WeaponFormComponent,
     MainStatsFormComponent,
-    OperativeSelectionComponent
+    OperativeSelectionComponent,
+    SymbolReplace,
+    AbilitiesNotesComponent
   ],
   imports: [
     BrowserModule,

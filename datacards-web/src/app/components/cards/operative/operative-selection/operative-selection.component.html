@@ -2,17 +2,40 @@
   <h2>Add an operative</h2>
 </div>
 
-<div class="f-sa">
-  <mat-form-field class="col-6" [formGroup]="weaponForm">
-    <mat-label>Operative</mat-label>
-    <mat-select formControlName="wType">
-      <mat-option *ngFor="let operative of imp" [value]="operative">
-        {{ operative.opname }}
-      </mat-option>
-    </mat-select>
-  </mat-form-field>
+<div class="">
+  <div class="f-sa">
+    <mat-form-field class="" [formGroup]="weaponForm">
+      <mat-label>Faction</mat-label>
+      <mat-select formControlName="wFaction">
+        <mat-option *ngFor="let operative of allData" [value]="operative">
+          {{ operative.factionname }}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+  </div>
 
+  <div class="f-sa">
+    <mat-form-field class="" [formGroup]="weaponForm">
+      <mat-label>Kill team</mat-label>
+      <mat-select formControlName="wKillTeam">
+        <mat-option *ngFor="let killteam of weaponForm.get('wFaction')?.value?.killteams" [value]="killteam">
+          {{ killteam.killteamname }}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+  </div>
+
+  <div class="f-sa">
+    <mat-form-field class="" [formGroup]="weaponForm">
+      <mat-label>Operative</mat-label>
+      <mat-select formControlName="wOperative">
+        <mat-option
+          *ngFor="let operative of operatives"
+          [value]="operative"
+        >
+          {{ operative.opname }}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+  </div>
 </div>
-
-
-

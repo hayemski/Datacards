@@ -12,12 +12,16 @@ export class OperativeSelectionComponent implements OnInit {
   @Input() card!: Card;
 
   constructor() { }
-  data: any = allData;
-  imp: any = this.data[2].killteams[7].fireteams[0].operatives;
+  allData: any = allData;
+  imp: any = this.allData[2]
+
+  factions!:any;
+  operatives!:any;
+  //killteams[7].fireteams[0].operatives;
 
   ngOnInit(): void {
-    console.log(this.imp);
-    this.weaponForm.get('wType')?.valueChanges.subscribe(value => {
+    console.log(this.allData);
+    this.weaponForm.get('wOperative')?.valueChanges.subscribe(value => {
       console.log(value)
       this.card.APL = value.APL;
       this.card.DF = value.DF;
@@ -26,12 +30,26 @@ export class OperativeSelectionComponent implements OnInit {
       this.card.name = value.opname;
       this.card.save = value.SV;
       this.card.wounds = value.W;
+      this.card.weapons = value?.weapons;
+      this.card.abilities = value?.abilities;
+      this.card.uniqueActions = value?.uniqueactions;
     })
 
+    this.weaponForm.get('wFaction')?.valueChanges.subscribe(value => {
+      console.log(value)
+      this.factions = value.killteams;
+    })
+    this.weaponForm.get('wKillTeam')?.valueChanges.subscribe(value => {
+      console.log(value)
+      //this.factions = value.fireteams[0]?.operatives;
+      this.operatives = value.fireteams[0]?.operatives;
+    })
   }
 
   weaponForm = new FormGroup({
-    wType: new FormControl(),
+    wFaction: new FormControl(),
+    wKillTeam: new FormControl(),
+    wOperative: new FormControl(),
   });
 
 
