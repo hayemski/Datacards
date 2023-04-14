@@ -11,6 +11,7 @@ import { Card } from '../../card/card';
 export class OperativeSelectionComponent implements OnInit {
   @Input() card!: Card;
   @Input() type!: string;
+  @Input() ploys!:any;
 
   constructor() { }
   allData: any = allData;
@@ -18,7 +19,6 @@ export class OperativeSelectionComponent implements OnInit {
 
   factions!:any;
   operatives!:any;
-  ploys!:any;
   //killteams[7].fireteams[0].operatives;
 
   ngOnInit(): void {
@@ -45,6 +45,7 @@ export class OperativeSelectionComponent implements OnInit {
       console.log(value)
       //this.factions = value.fireteams[0]?.operatives;
       this.operatives = value.fireteams[0]?.operatives;
+      debugger;
       this.ploys = value.ploys.strat.concat(value.ploys.tac);
     })
     this.weaponForm.get('wPloy')?.valueChanges.subscribe(value => {

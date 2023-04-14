@@ -17,6 +17,7 @@ import { OperativeSelectionComponent } from './components/cards/operative/operat
 import { SymbolReplace } from './pipes/symbolReplace';
 import { AbilitiesNotesComponent } from './components/cards/card/abilities-notes/abilities-notes.component';
 import { PloyCardComponent } from './components/cards/card/ploy-card/ploy-card.component';
+import { PloySelectionComponent } from './components/cards/operative/ploy-selection/ploy-selection.component';
 
 
 
@@ -32,7 +33,8 @@ import { PloyCardComponent } from './components/cards/card/ploy-card/ploy-card.c
     OperativeSelectionComponent,
     SymbolReplace,
     AbilitiesNotesComponent,
-    PloyCardComponent
+    PloyCardComponent,
+    PloySelectionComponent
   ],
   imports: [
     BrowserModule,
