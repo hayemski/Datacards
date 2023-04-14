@@ -10,6 +10,7 @@ import { Card } from '../../card/card';
 })
 export class OperativeSelectionComponent implements OnInit {
   @Input() card!: Card;
+  @Input() type!: string;
 
   constructor() { }
   allData: any = allData;

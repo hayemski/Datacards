@@ -1,9 +1,11 @@
-<div class="">
-  <h2>Add an operative</h2>
+<div style="justify-content: center;width: 100%;">
+  <h2 *ngIf="type=='O'" style="text-align: center;">Add an operative</h2>
+  <h2 *ngIf="type=='P'" style="text-align: center;">Add a ploy</h2>
+
 </div>
 
 <div class="">
-  <div class="f-sa">
+  <div class="f-sa"  *ngIf="type == 'O'">
     <mat-form-field class="" [formGroup]="weaponForm">
       <mat-label>Faction</mat-label>
       <mat-select formControlName="wFaction">
@@ -14,7 +16,7 @@
     </mat-form-field>
   </div>
 
-  <div class="f-sa">
+  <div class="f-sa"  *ngIf="type == 'O'">
     <mat-form-field class="" [formGroup]="weaponForm">
       <mat-label>Kill team</mat-label>
       <mat-select formControlName="wKillTeam">
@@ -25,7 +27,7 @@
     </mat-form-field>
   </div>
 
-  <div class="f-sa">
+  <div class="f-sa"  *ngIf="type == 'O'">
     <mat-form-field class="" [formGroup]="weaponForm">
       <mat-label>Operative</mat-label>
       <mat-select formControlName="wOperative">
@@ -39,7 +41,7 @@
     </mat-form-field>
   </div>
 
-  <div class="f-sa">
+  <div class="f-sa" *ngIf="type == 'P'">
     <mat-form-field class="" [formGroup]="weaponForm">
       <mat-label>Ploy</mat-label>
       <mat-select formControlName="wPloy">

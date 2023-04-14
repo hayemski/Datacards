@@ -9,18 +9,27 @@
 
   <div style="margin-left: 1em;">
     <mat-card style="height: 600px; width: 450px">
+      <!-- <app-main-stats-form [card]="card"></app-main-stats-form>
+      <app-weapon-form [card]="card"></app-weapon-form> -->
+      <app-operative-selection [card]="card"  [type]="'O'"></app-operative-selection>
+    </mat-card>
+
+  </div>
+</div>
+
+<div class="wrapper" style="margin-top: 1em">
+  <div style="margin-top: 1em; justify-content: center;">
+    <mat-card style="height: 600px; width: 450px">
       <app-ploy-card [card]="card"></app-ploy-card>
     </mat-card>
   </div>
-
-
-</div>
-
-<div style="margin-top: 1em; justify-content: center;">
+<div style="margin-left: 1em;">
   <mat-card style="height: 600px; width: 450px">
     <!-- <app-main-stats-form [card]="card"></app-main-stats-form>
     <app-weapon-form [card]="card"></app-weapon-form> -->
-    <app-operative-selection [card]="card"></app-operative-selection>
+    <app-operative-selection [card]="card" [type]="'P'"></app-operative-selection>
   </mat-card>
+
 </div>
 
+</div>
